@@ -1,7 +1,8 @@
 {
     "app-id": "com.deepin.Calendar",
+    "branch": "master",
     "runtime": "com.deepin.Platform",
-    "runtime-version": "15.4.1",
+    "runtime-version": "15.5",
     "sdk": "com.deepin.Sdk",
     "command": "dde-calendar",
     "separate-locales": false,
@@ -28,7 +29,7 @@
 							{
 									"type": "git",
 									"url": "https://github.com/linuxdeepin/dde-calendar",
-									"branch": "1.0.11"
+									"branch": "ab70b469ea6256f65f60dfd64869b2207bcaecb5"
 							},
 							{
 									"type": "script",
