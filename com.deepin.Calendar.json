@@ -6,7 +6,6 @@
     "sdk": "com.deepin.Sdk",
     "command": "dde-calendar",
     "separate-locales": false,
-    "branch": "1.0.8",
     "tags": ["proprietary"],
 	"rename-desktop-file": "dde-calendar.desktop",
 	"rename-icon": "dde-calendar",
