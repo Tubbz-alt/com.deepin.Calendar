@@ -1,13 +1,13 @@
 #!/bin/sh
 flatpak install --system --bundle /usr/share/deepin-flatpak/app/com.deepin.Calendar/x86_64/master/bundle
 rm /usr/share/deepin-flatpak/app/com.deepin.Calendar/x86_64/master/bundle
-
+flatpak run --command=fc-cache com.deepin.Calendar
 for f in `ls -d /home/*/`;
 do
 	mkdir -p $f/.var/app/com.deepin.Calendar/cache/;
 	USER=`echo $f|cut -d '/' -f 3`;
+	cp -rf /root/.var/app/com.deepin.Calendar/cache/fontconfig/ $f.var/app/com.deepin.Calendar/cache/
 	chown -R $USER:$USER $f
-	tar -zxf /usr/share/deepin-flatpak/runtime/com.deepin.Platform/x86_64/15.5/fontconfig.tar.gz -C $f.var/app/com.deepin.Calendar/cache/
 done
 
 exit 0
