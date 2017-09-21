@@ -1,45 +1,45 @@
 {
-    "app-id": "com.deepin.Calendar",
-    "branch": "master",
-    "runtime": "com.deepin.Platform",
-    "runtime-version": "15.5",
-    "sdk": "com.deepin.Sdk",
-    "command": "dde-calendar",
-    "separate-locales": false,
-    "tags": ["proprietary"],
-	"rename-desktop-file": "dde-calendar.desktop",
-	"rename-icon": "dde-calendar",
-    "finish-args": [
-        /* X11 + XShm access */
-        "--share=ipc", "--socket=x11",
-        /* Sound access */
-        "--socket=pulseaudio",
-        /* Network access */
-        "--share=network",
-        /* OpenGL */
-        "--device=dri",
-		"--own-name=com.deepin.dde.Calendar"
-    ],
-	"modules": [
-			{
-					"name": "dde-calendar",
-					"no-autogen": true,
-					"sources": [
-							{
-									"type": "git",
-									"url": "https://github.com/linuxdeepin/dde-calendar",
-									"branch": "ab70b469ea6256f65f60dfd64869b2207bcaecb5"
-							},
-							{
-									"type": "script",
-									"commands": [
-											"sed -i 's|/usr|/app|g' dde-calendar.pro",
-											"sed -i 's|Exec=.*|Exec=/app/bin/dde-calendar|g' dde-calendar.desktop",
-											"qmake PREFIX=/app"],
-									"dest-filename": "configure"
-							}
-
-					]
-			}
-	]
+  "app-id": "com.deepin.Calendar",
+  "branch": "master",
+  "runtime": "com.deepin.Platform",
+  "runtime-version": "15.5",
+  "sdk": "com.deepin.Sdk",
+  "command": "dde-calendar",
+  "separate-locales": false,
+  "tags": [
+    "proprietary"
+  ],
+  "rename-desktop-file": "dde-calendar.desktop",
+  "rename-icon": "dde-calendar",
+  "finish-args": [
+    "--share=ipc",
+    "--socket=x11",
+    "--socket=pulseaudio",
+    "--share=network",
+    "--device=dri",
+    "--own-name=com.deepin.dde.Calendar",
+    "--own-name=com.deepin.SingleInstance.dde-calendar"
+  ],
+  "modules": [
+    {
+      "name": "dde-calendar",
+      "no-autogen": true,
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/linuxdeepin/dde-calendar",
+          "branch": "ab70b469ea6256f65f60dfd64869b2207bcaecb5"
+        },
+        {
+          "type": "script",
+          "commands": [
+            "sed -i 's|/usr|/app|g' dde-calendar.pro",
+            "sed -i 's|Exec=.*|Exec=/app/bin/dde-calendar|g' dde-calendar.desktop",
+            "qmake PREFIX=/app"
+          ],
+          "dest-filename": "configure"
+        }
+      ]
+    }
+  ]
 }
